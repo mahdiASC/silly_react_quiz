@@ -3,24 +3,25 @@ import NewGameButton from "./newGameButton";
 
 const Score = ({ score, questions, answers, onReset }) => {
   return (
-    <React.Fragment>
-      <h1>Score: {score}</h1>
+    <div className="scoreReport">
+      <h1>Score: {((score / questions.length) * 100).toFixed(0)}%</h1>
       <ul>
         {questions.map((question, i) => {
           const answer = answers[i];
-          const color = answer ? "green" : "red";
+          const colorClass = answer ? "correct" : "incorrect";
           return (
-            <li key={i}>
-              <h3>{question.text}</h3>
-              <div>
-                <h4 style={{ color: color }}>{question.correct_answer}</h4>
-              </div>
+            <li className="scoreReportQuestion" key={i}>
+              <h3>
+                <span className="accentText">Question #{i + 1}:</span>
+                {question.text}
+              </h3>
+              <h4 className={colorClass}>{question.correct_answer}</h4>
             </li>
           );
         })}
       </ul>
       <NewGameButton onReset={onReset} />
-    </React.Fragment>
+    </div>
   );
 };
 

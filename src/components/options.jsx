@@ -3,9 +3,14 @@ import NewGameButton from "./newGameButton";
 
 const Options = ({ onReset }) => {
   return (
-    <div>
-      <NewGameButton onReset={onReset} />
-    </div>
+    <header>
+      <div className="filler" />
+      <h1>Silly React Quiz</h1>
+      <div className="filler">
+        <NewGameButton onReset={onReset} />
+      </div>
+      <div className="clear-fix" />
+    </header>
   );
 };
 
