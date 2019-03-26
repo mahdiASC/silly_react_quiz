@@ -1,3 +1,7 @@
+
+# Live site
+https://mahdiasc.github.io/silly_react_quiz/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
